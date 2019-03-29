@@ -76,6 +76,15 @@ public class HeightConverter extends JFrame {
 		inchTxt.setColumns(10);
 		
 		JButton btnConvert = new JButton("Convert to");
+		btnConvert.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				double feet, inches, cm;
+				feet = Double.parseDouble(feetTxt.getText());
+				inches = Double.parseDouble(inchTxt.getText());
+				cm = (feet*12 + inches) * 2.54;
+				
+			}
+		});
 		btnConvert.setForeground(new Color(105, 105, 105));
 		btnConvert.setBackground(new Color(169, 169, 169));
 		btnConvert.setFont(new Font("Verdana", Font.BOLD, 16));
