@@ -82,7 +82,7 @@ public class HeightConverter extends JFrame {
 				feet = Double.parseDouble(feetTxt.getText());
 				inches = Double.parseDouble(inchTxt.getText());
 				cm = (feet*12 + inches) * 2.54;
-				
+				cmTxt.setText(String.valueOf(cm) );
 			}
 		});
 		btnConvert.setForeground(new Color(105, 105, 105));
