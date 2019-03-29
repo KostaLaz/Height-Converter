@@ -13,6 +13,8 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class HeightConverter extends JFrame {
 
@@ -86,12 +88,25 @@ public class HeightConverter extends JFrame {
 		cmTxt.setColumns(10);
 		
 		JButton btnClear = new JButton("Clear");
+		btnClear.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				feetTxt.setText("");
+				inchTxt.setText("");
+				cmTxt.setText("");
+				
+			}
+		});
 		btnClear.setForeground(new Color(105, 105, 105));
 		btnClear.setFont(new Font("Verdana", Font.BOLD, 13));
 		btnClear.setBounds(56, 210, 89, 23);
 		contentPane.add(btnClear);
 		
 		JButton btnExit = new JButton("Exit");
+		btnExit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				System.exit(0);
+			}
+		});
 		btnExit.setForeground(new Color(105, 105, 105));
 		btnExit.setFont(new Font("Verdana", Font.BOLD, 13));
 		btnExit.setBounds(267, 210, 89, 23);
